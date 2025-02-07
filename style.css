@@ -1,0 +1,145 @@
+body {
+    background-color: rgb(253, 255, 238);
+    color: rgb(207, 53, 60);
+    font-family: 'Erode', serif;
+    font-weight: 500;
+    margin: 20px;
+}
+
+header{
+margin-bottom: 30px;
+}
+
+h1{
+    font-size: 54px;
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* using flexbox for placement of the nav-links in the nav-bar */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* creating space between the nav-links by using flexbox */
+.nav-links {
+    font-size: 18px;
+    display: flex;
+    gap: 20px;
+  }
+
+  /* nav-link styling */
+  .nav-links a{
+    color: rgba(75, 73, 73, 1);
+  }
+
+  /* arranges the grid-items in rows, all the same size, meking each item taking up 1/4 of the page, css-grid */
+.grid-parent {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* Container for h2 and the card container (4 cards), placing the h2 on top of the card container, using css.grid*/
+.grid-item {
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+}
+
+h2{
+    font-size: 22px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Card container (4 cards), placing the cards in a column, using css-grid*/
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+/* Styling of the cards, using flexbox*/
+.card-red {
+    background-color: rgb(253, 255, 238);
+    border-style: solid;
+    border-color: rgb(207, 53, 60);
+    border-width: 5px 5px 50px 5px;
+    display: flex;
+    flex-direction:column;
+    position: relative;
+}
+
+.card-mint {
+    background-color: rgb(253, 255, 238);
+    border-style: solid;
+    border-color: rgb(196, 238, 224);
+    border-width: 5px 5px 50px 5px;
+    display: flex;
+    flex-direction:column;
+    position: relative;
+}
+
+/* styling the card images*/
+img {
+    width: 100%;
+    max-height: 170px;
+    object-fit: cover;
+}
+
+/* placement of the paragraph, h2 and button using flexbox*/
+.card-content{
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+h3{
+    font-size: 20px;
+    font-family: 'Satoshi', sans-serif;
+    text-align: end;
+}
+
+
+p{
+    color: rgba(75, 73, 73, 1);
+}
+
+.button {
+    background-color: rgb(207, 53, 60);
+    padding: 5px 10px;
+}
+
+a{
+    text-decoration: none;
+    color:  rgb(253, 255, 238);
+}
+
+
+/* use min-width - mobile first, media query for tablet, desktop and big desktop */
+
+/* On screens that are 768px or more */
+@media screen and (min-width: 768px) {
+
+    .card-container{
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+  /* On screens that are 992px or more */
+  @media screen and (min-width: 992px) {
+    .card-container{
+       /* grid-template-columns:  2fr 1fr 0.5fr 0.5fr; */
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+    h1{
+        font-size: 76px;
+        margin-top: 0px;
+    }
+
+}
