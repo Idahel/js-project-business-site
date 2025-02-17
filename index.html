@@ -10,12 +10,27 @@
 <body>
 <header>
     <nav class="nav-bar">
-        <div class="nav-links">
-            <a href="https://languine.ai/sv/pricing">home</a>
-            <a href="#">about</a>
-            <a href="#">contact</a>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">about</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">contact</a>
+            </li>
+        </ul>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
+
     </nav>
+
     <section class="hero-container">
         <div class="overlay"></div>
         <video 
@@ -32,7 +47,7 @@
 </header>
 
     <main>
-        <div class="grid-item-1child">
+        <div class="container-info-newsletter">
 
             <div class="site-info">
                 <h2>about this site</h2>
@@ -69,7 +84,7 @@
                 </div>
             </fieldset>  
 
-            <button type="submit" class="">sign me up</button>
+            <button type="submit" class="formButton">sign me up</button>
 
             </form>
 
@@ -322,5 +337,6 @@
 <footer>
     <p>This is a footer</p>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
