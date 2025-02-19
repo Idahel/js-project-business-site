@@ -8,18 +8,18 @@
     <link href="https://api.fontshare.com/v2/css?f[]=erode@400&f[]=satoshi@700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
+<header id="header">
     <nav class="nav-bar">
 
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="#" class="nav-link">home</a>
+                <a href="#header" class="nav-link">home</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">about</a>
+                <a href="#site-info" class="nav-link">about</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">contact</a>
+                <a href="#contact" class="nav-link">contact</a>
             </li>
         </ul>
 
@@ -49,7 +49,7 @@
     <main>
         <div class="container-info-newsletter">
 
-            <div class="site-info">
+            <div class="site-info" id="site-info">
                 <h2>about this site</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit  Ex officia est amet vero repellendus? Iste officiis inventore aliquam cumque, dolor eveniet!</p>
             </div>
@@ -109,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card-red">
                     <img src="/assets/lemon-pasta.webp" alt="">
                     <div class="card-content">
@@ -121,6 +122,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card-red">
                     <img src="/assets/mousse.webp" alt="">
                     <div class="card-content">
@@ -133,6 +135,7 @@
                             </div>
                     </div>
                 </div>
+
                 <div class="card-red">
                     <img src="/assets/ribollita.webp" alt="">
                     <div class="card-content">
@@ -150,11 +153,14 @@
                 </div>
             </div>
         </div>
+
+
         <div class="grid-item">
             <div>
                 <h2>recipes on my radar</h2>
             </div>
             <div class="card-container">
+
                 <div class="card-mint">
                     <img src="/assets/cheesecake.webp" alt="">
                     <div class="card-content">
@@ -169,6 +175,7 @@
                             </div>
                     </div>
                 </div>
+
                 <div class="card-mint">
                     <img src="/assets/gnocci.webp" alt="">
                     <div class="card-content">
@@ -183,6 +190,7 @@
                             </div>
                         </div>
                 </div>
+
                 <div class="card-mint">
                     <img src="/assets/mela.webp" alt="">
                     <div class="card-content">
@@ -197,6 +205,7 @@
                             </div>
                         </div>
                 </div>
+
                 <div class="card-mint">
                     <img src="/assets/bibimbap.webp" alt="">
                     <div class="card-content">
@@ -335,7 +344,28 @@
 </main>
 
 <footer>
-    <p>This is a footer</p>
+    <h3 id="contact">Contact</h3>
+    <div class="contact-info-container">
+        <div class="contact-info">
+            <h4 id="contact-way-1">
+                <span class="expand-symbol">+</span>
+                message in a bottle</h4>
+            <p class="contact">latitude: -22° 54' 11.63" s longitude: -43° 10' 22.59" w</p>
+        </div>
+        <div class="contact-info">
+            <h4 id="contact-way-2">
+                <span class="expand-symbol">+</span>
+                give me a call</h4>
+            <p class="contact">070 xxx xx xx</p>
+        </div>
+        <div class="contact-info">
+            <h4 id="contact-way-3">
+                <span class="expand-symbol">+</span>
+                send an e-mail</h4>
+            <p class="contact"> amouthfulguide@javascript.com</p>
+        </div>
+    </div>
+    
 </footer>
 <script src="script.js"></script>
 </body>

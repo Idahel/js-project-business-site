@@ -20,60 +20,64 @@ flex-direction: column;
 
 /* nav-bar styling - applied on mobile phone only - hamburger menu*/
 @media screen and (max-width: 767px) {
+
+        .nav-menu {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            gap: 0;
+            flex-direction: column;
+            background-color: rgb(253, 255, 238);
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            transition: 0.3s;
+            z-index: 3;
+            padding-top: 50px;
+        }
     
-    .hamburger {
-        display: block;
-        justify-self: flex-end;
+        .nav-menu.active {
+            left: 0;
+        }
+    
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 4;
+        }
+    
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 10px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: rgb(0, 255, 187);
+        }
+    
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: rgb(0, 0, 0);
+        }
+    
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: rgb(0, 0, 0);
+        }
+    
+        .nav-item {
+            margin: 16px 0;
+        }
     }
-
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px 10px;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        transform: all 0.3s ease-in-out;
-        background-color: black
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu {
-        position: absolute;
-        margin-top: 28px;
-        top: -100%;
-        gap: 0px;
-        flex-direction: column;
-        background-color:rgb(253, 255, 238);
-        width: 100%;
-        text-align: right;
-        transition: 0.3s;
-        z-index: 3;
-    }
-
-    li {
-        list-style: none;
-    }
-
-    .nav-item{
-        margin: 10px 10px;
-    }
-
-    .nav-menu.active {
-        top: 0;
-    }
-}
+    
 
 /* end of hamburger-styling*/
 
@@ -223,6 +227,10 @@ input[type="radio"]::before {
     border-radius: 50%;
   }
 
+  input[type="radio"]:focus::before {
+    box-shadow: 0 0 0 3px rgba(0, 255, 187, 0.3);
+  }
+
 input[type="radio"]:checked::before {
     background-color: rgb(0, 255, 187);
   }
@@ -234,7 +242,14 @@ input[type="radio"]:checked::before {
     border-radius: 4px;
     padding: 10px;
     width: 200px;
-    background-color: rgb(253, 255, 238); 
+    background-color: rgb(253, 255, 238);
+    transition: all 0.3s ease;
+  }
+
+  .form-input input[type="email"]:focus {
+    border-color: rgb(0, 255, 187);
+    box-shadow: 0 0 0 3px rgba(0, 255, 187, 0.3);
+    outline: none;
   }
 
 .formButton {
@@ -274,11 +289,14 @@ input[type="radio"]:checked::before {
 
 h2{
     font-size: 22px;
-    margin: 0px;
+    margin-bottom: 10px;
     padding: 0px;
+    cursor: pointer;
 }
 
 /* Card container (4 cards), placing the cards in a column, using css-grid*/
+
+
 .card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -306,6 +324,19 @@ h2{
     position: relative;
 }
 
+.card-red, .card-mint {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-red:hover, .card-mint:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
+                0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
 /* styling the card images*/
 img {
     width: 100%;
@@ -330,7 +361,7 @@ h3{
 }
 
 
-p{
+.card-content p {
     margin-top: 10px;
     color: rgba(75, 73, 73, 1);
 }
@@ -347,12 +378,68 @@ p{
 
 a{
     text-decoration: none;
-    color:  rgb(253, 255, 238);
+    color: rgb(253, 255, 238);
 }
 
+footer {
+    background-color:rgba(0, 0, 0, 0.3);
+    color: rgb(253, 255, 238);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
 
-/* use min-width - mobile first, media query for tablet, desktop and big desktop */
+footer h3{
+    margin-right: 10px;
+}
 
+footer h4{
+    font-size: 16px;
+    font-family: 'Satoshi', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s ease;
+}
+
+footer h4:hover{
+    color: black;
+}
+
+footer p{
+    color: black;
+    margin-left: 30px;
+}
+
+.expand-symbol {
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 15px;
+}
+
+h4.open .expand-symbol {
+    transform: rotate(45deg);
+}
+
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.contact{
+    display: none;
+}
+
+.open + .contact {
+    display: flex;
+}
 /* On screens that are 768px or more */
 @media screen and (min-width: 768px) {
 
@@ -469,7 +556,7 @@ a{
         justify-self: center;
     }
 
-    /* Adjusting grid layouts for different screen sizes*/
+    /* Adjusting grid layouts for larger screen sizes*/
     .card-container{
     grid-template-columns: repeat(4, 1fr);
     }
