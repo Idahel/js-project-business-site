@@ -1,5 +1,5 @@
-const hamburger = document.querySelector('.hamburger')
-const navMenu = document.querySelector('.nav-menu')
+const hamburger = document.getElementById('hamburger')
+const navMenu = document.getElementById('nav-menu')
 const contactWay1 = document.getElementById('contact-way-1')
 const contactWay2 = document.getElementById('contact-way-2')
 const contactWay3 = document.getElementById('contact-way-3')

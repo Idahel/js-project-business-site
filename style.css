@@ -2,14 +2,12 @@ body {
     background-color: rgb(253, 255, 238);
     color: rgb(207, 53, 60);
     font-family: 'Erode', serif;
-    font-weight: 500;
     margin: 0;
 }
 
 * {
     padding: 0;
     margin: 0;
-    box-shadow: border-box;
 }
 
 /* Header-styling start */
@@ -18,7 +16,7 @@ display: flex;
 flex-direction: column;
 }
 
-/* nav-bar styling - applied on mobile phone only - hamburger menu*/
+/* nav-bar styling - applied on mobile only - hamburger menu */
 @media screen and (max-width: 767px) {
 
         .nav-menu {
@@ -133,31 +131,19 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 2px;
+    margin-bottom: 20px;
 }
 
-.site-info {
-    margin-top: 2px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    min-height: 30vh;
-
-    background-image: url('assets/josh-appel-8Q3a_pb8jf0-unsplash.jpg');
-    background-size: cover; 
-    background-position: center;
-    object-fit: cover;
-    position: relative;
-}
-
-.site-info::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.site-info { 
+    margin-top: 2px; 
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 30vh; 
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/josh-appel-8Q3a_pb8jf0-unsplash.jpg'); 
+    background-size: cover;  
+    background-position: center; 
+    object-fit: cover; 
 }
 
 
@@ -200,7 +186,13 @@ form p {
     color: rgba(0, 0, 0, 10);
 }
 
-.form-input {
+.form-input-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-input, .form-input-radio {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -227,7 +219,7 @@ input[type="radio"]::before {
     border-radius: 50%;
   }
 
-  input[type="radio"]:focus::before {
+input[type="radio"]:focus::before {
     box-shadow: 0 0 0 3px rgba(0, 255, 187, 0.3);
   }
 
@@ -274,14 +266,13 @@ input[type="radio"]:checked::before {
 
   /* End of styling - first part of <main> */
 
-  /* arranges the grid-items in rows, all the same size, meking each item taking up 1/4 of the page, css-grid */
 .grid-parent {
     display: grid;
     grid-template-rows: repeat(4, auto);
     gap: 40px;
     margin: 20px;
 }
-/* Container for h2 and the card container (4 cards), placing the h2 on top of the card container, using css.grid*/
+
 .grid-item {
     display: grid;
     grid-template-columns: repeat(1, 4fr);
@@ -291,60 +282,49 @@ h2{
     font-size: 22px;
     margin-bottom: 10px;
     padding: 0px;
-    cursor: pointer;
 }
-
-/* Card container (4 cards), placing the cards in a column, using css-grid*/
-
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
 /* Styling of the cards, using flexbox*/
-.card-red {
-    background-color: rgb(253, 255, 238);
-    border-style: solid;
+.card-type1 {
     border-color: rgb(207, 53, 60);
-    border-width: 5px 5px 50px 5px;
-    display: flex;
-    flex-direction:column;
-    position: relative;
 }
 
-.card-mint {
+.card-type2 {
+    border-color: rgb(196, 238, 224);
+}
+
+.card-type1, .card-type2 {
     background-color: rgb(253, 255, 238);
     border-style: solid;
-    border-color: rgb(196, 238, 224);
     border-width: 5px 5px 50px 5px;
     display: flex;
     flex-direction:column;
     position: relative;
-}
 
-.card-red, .card-mint {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
                 0 8px 16px rgba(0, 0, 0, 0.1);
     transform: translateY(0);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-red:hover, .card-mint:hover {
+.card-type1:hover, .card-type2:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
                 0 12px 24px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
 }
 
-/* styling the card images*/
 img {
     width: 100%;
     max-height: 170px;
     object-fit: cover;
 }
 
-/* placement of the paragraph, h2 and button using flexbox*/
 .card-content{
     padding: 20px;
     flex-grow: 1;
@@ -353,13 +333,11 @@ img {
     gap: 10px;
 }
 
-
 h3{
     font-size: 20px;
     font-family: 'Satoshi', sans-serif;
     text-align: end;
 }
-
 
 .card-content p {
     margin-top: 10px;
@@ -387,6 +365,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    margin-top: 20px;
 }
 
 footer h3{
@@ -433,13 +412,14 @@ h4.open .expand-symbol {
     margin-bottom: 10px;
 }
 
-.contact{
+.contact {
     display: none;
 }
 
 .open + .contact {
     display: flex;
 }
+
 /* On screens that are 768px or more */
 @media screen and (min-width: 768px) {
 
@@ -561,6 +541,21 @@ h4.open .expand-symbol {
     grid-template-columns: repeat(4, 1fr);
     }
 
+}
+
+/* To make the site look good on larger screensx*/ 
+@media (min-width: 1500px) { 
+    .grid-parent { 
+        max-width: 1500px; 
+        margin: 0 auto; 
+    } 
+}
+
+@media (min-width: 1700px) { 
+    body { 
+        max-width: 1700px; 
+        margin: 0 auto; 
+    } 
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
